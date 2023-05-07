@@ -22,14 +22,15 @@ with open('output.csv', newline='') as csvfile:
     counter = 0
     encrypted_rows = []
     for row in reader:
-        encrypted_row = [public_key.encrypt(int(cell)) for cell in row]
+        # set the r_value to 1, so that the cipher text won't be obfustrated with a random number
+        encrypted_row = [public_key.encrypt(int(cell), r_value = 1) for cell in row]
         encrypted_rows.append(encrypted_row)
         
         counter += 1
         if counter % 5 == 0:
             print(f"{counter} rows processed")
-        if counter == 30:
-            break
+        #if counter == 30:
+        #    break
     #print(encrypted_rows)
 
 print("encrypting done...")
