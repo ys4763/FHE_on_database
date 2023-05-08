@@ -56,6 +56,7 @@ while True:
 	    res = client_socket.recv(8196)
 	    res = pickle.loads(res)
 	    print("There position of students satisfying all of the query values are {}".format(res))
+	    break
 	elif count == 3:
 	    val = int(reply.strip())
 	    value = public_key.encrypt(val, r_value=1)
