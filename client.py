@@ -29,7 +29,7 @@ while True:
 	# send reply
 	reply = input()
 	# print(reply)
-	if count <= 1 and query != "1" and query != "4":
+	if count <= 1 and query != "4":
 	    client_socket.send(reply.encode())
 	if reply == "Goodbye":
 		break
